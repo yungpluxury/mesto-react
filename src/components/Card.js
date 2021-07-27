@@ -7,7 +7,7 @@ function Card({ card, onCardClick }) {
     console.log(card);
     return (
         <figure className="element">
-            <img className="element__image" src={card.link} alt="фото карточки" onClick={handleCardClick} />
+            <img className="element__image" src={card.link} alt="{card.name}" onClick={handleCardClick} />
             <button type="button" className="element__trash-icon"></button>
             <figcaption className="element__name-container">
                 <h2 className="element__name">{card.name}</h2>

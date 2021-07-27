@@ -8,8 +8,8 @@ function PopupWithForm({ isOpen, onClose, name, title, children, buttonName }) {
           <h2 className="popup__title">{title}</h2>
           <form name={name} className="form">
             {children}
-                <fieldset class="form__elements">
-                    <button type="submit" class="form__save-button">{buttonName}</button>
+                <fieldset className="form__elements">
+                    <button type="submit" className="form__save-button">{buttonName}</button>
                 </fieldset>
           </form>
         </div>
