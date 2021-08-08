@@ -34,7 +34,7 @@ class Api {
           headers: this._headers,
           body: JSON.stringify({
             name: userData.name,
-            about: userData.description
+            about: userData.about
           })
         })
         .then(this._checkErrors)
@@ -52,19 +52,11 @@ class Api {
         .then(this._checkErrors)
     }
 
-    addLike(id) {
-        return fetch(this._url + `/cards/likes/${id}`, {
-          method: 'PUT',
-          headers: this._headers
-        })
-        .then(this._checkErrors)
-    }
-
-    deleteLike(id) {
-        return fetch(this._url + `/cards/likes/${id}`, {
-          method: 'DELETE',
-          headers: this._headers
-        })
+    changeLikeCardStatus(id, isLiked) {
+      return fetch(this._url + `/cards/likes/${id}`, {
+        method: isLiked ? 'DELETE' : 'PUT',
+        headers: this._headers
+      })
         .then(this._checkErrors)
     }
 
