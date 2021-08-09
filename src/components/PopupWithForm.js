@@ -16,7 +16,6 @@ function PopupWithForm({ children, name, title, textButton, isOpen, onClose, onS
         <form
           className={"form"}
           name={name}
-          id={"popup-form-edit"}
           onSubmit={onSubmit}
         >
           {children}
