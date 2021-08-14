@@ -35,8 +35,30 @@ function App() {
   const [isRemovePlacePopupOpen, setIsRemovePlacePopupOpen] = useState(false);
   
 
-  const handleAddPlaceSubmit = ({ name, link }) => {
-    api.addCard({ name, link })
+  function handleEscClose(evt) {
+    if (evt.key === 'Escape') {
+      closeAllPopups();
+    }
+  }
+  
+  function handleOverlayClose(evt) {
+    if (evt.target.classList.contains('popup')) {
+      closeAllPopups();
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleEscClose);
+    window.addEventListener('mousedown', handleOverlayClose);
+  
+    return () => {
+      window.removeEventListener('keydown', handleEscClose);
+      window.removeEventListener('mousedown', handleOverlayClose);
+    };
+  })
+
+  const handleAddPlaceSubmit = (values) => {
+    api.addCard(values)
       .then(res => {
         setCards([res, ...cards]);
         closeAllPopups();
@@ -54,8 +76,8 @@ function App() {
       .catch(err => console.log(`Error: ${err}`));
   }
 
-  const handleUpdateUserInfo = ({ name, about }) => {
-    api.setUserInfoByApi({ name, about })
+  const handleUpdateUserInfo = (data) => {
+    api.setUserInfoByApi(data)
       .then(res => {
         setCurrentUser(res);
         closeAllPopups();

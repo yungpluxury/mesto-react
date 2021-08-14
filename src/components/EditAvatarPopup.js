@@ -1,44 +1,51 @@
 import React from 'react';
-import {useEffect, useRef} from 'react';
+import { useEffect } from 'react';
 import PopupWithForm from './PopupWithForm';
+import { useFormWithValidation } from '../validation/useFormWithValidation';
 
 function EditAvatarPopup({ onUpdateAvatar, isOpen, onClose }) {
     
-
-    const avatarRef = useRef('');
+    const {
+        values,
+        errors,
+        isValid,
+        handleChange,
+        resetForm
+      } = useFormWithValidation({});
 
     useEffect(() => {
-        avatarRef.current.value = '';
-    }, [isOpen])
+        resetForm();
+      }, [isOpen, resetForm])
 
     function handleSubmit(event) {
         event.preventDefault();
 
-        onUpdateAvatar({
-            avatar: avatarRef.current.value
-        });
+        onUpdateAvatar(values);
     }
   
     return (
         <PopupWithForm
-            name={"popup-add-avatar"}
-            title={"Обновить аватар"}
-            textButton={"Обновить"}
+            name="popup-add-avatar"
+            title="Обновить аватар"
+            textButton="Обновить"
             isOpen={isOpen}
             onClose={onClose}
             onSubmit={handleSubmit}
+            isDisabled={!isValid}
         >
         <input
-            className={"form__element-text"}
-            type={"url"}
-            placeholder={"Ссылка на аватар"}
-            name={"popup-input-url-avatar"}
-            ref={avatarRef}
-            minLength={"7"}
-            maxLength={"300"}
+            className={errors.avatar ? 'form__element-text form__element-text_type-error' : 'form__element-text'}
+            type="url"
+            id="avatar-link"
+            placeholder="Ссылка на аватар"
+            aria-label="ссылка"
+            name="avatar"
+            value={values.avatar || ''}
+            onChange={handleChange}
             required
         />
-        <span id={"popup-input-url-avatar-error"} className={"form__input-error"}></span>
+        <span id='avatar-link-error'
+        className={errors.avatar ? 'form__input-error_active' : 'form__input-error'}>{errors.avatar}</span>
       </PopupWithForm>
     );
   }

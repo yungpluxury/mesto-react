@@ -1,58 +1,64 @@
-import React, { useState } from 'react';
-
+import React, { useEffect } from 'react';
 import PopupWithForm from './PopupWithForm';
+import { useFormWithValidation } from '../validation/useFormWithValidation';
+
 
 function AddPlacePopup({ onAddPlace, isOpen, onClose }) {
-  const [inputName, setInputName] = useState('');
-  const [inputLink, setInputLink] = useState('');
 
-  const handleChangeName = (e) => setInputName(e.target.value);
-  const handleChangeLink = (e) => setInputLink(e.target.value);
+  const {
+    values,
+    errors,
+    isValid,
+    handleChange,
+    resetForm
+  } = useFormWithValidation({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    onAddPlace({
-      name: inputName,
-      link: inputLink
-    });
-
-    setInputName('');
-    setInputLink('');
+    onAddPlace(values);
   }
+
+  useEffect(() => {
+    resetForm();
+  }, [isOpen, resetForm])
 
   return (
     <PopupWithForm
-      name={"popup-add-card"}
-      title={"Новое место"}
-      textButton={"Создать"}
+      name="popup-add-card"
+      title="Новое место"
+      textButton="Создать"
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
+      isDisabled={!isValid}
     >
       <input
-        className={"form__element-text"}
-        type={"text"}
-        placeholder={"Название"}
-        name={"popup-input-place-name"}
-        minLength={"2"}
-        maxLength={"30"}
-        value={inputName}
-        onChange={handleChangeName}
+        className={errors.name ? 'form__element-text form__element-text_type-error' : 'form__element-text'}
+        type="text"
+        aria-label="Название места"
+        id="photo-title"
+        placeholder="Название"
+        name="name"
+        minLength="2"
+        maxLength="30"
+        value={values.name || ''}
+        onChange={handleChange}
         required
       />
-      <span id={"popup-input-place-name-error"} className={"popup__error"}></span>
+      <span id='name-error' className={errors.name ? 'form__input-error_active' : 'form__input-error'}>{errors.name}</span>
       <input
-        className={"form__element-text"}
-        type={"url"} placeholder={"Ссылка на картинку"}
-        name={"popup-input-url"}
-        minLength={"7"}
-        maxLength={"300"}
-        value={inputLink}
-        onChange={handleChangeLink}
+        className={errors.link ? 'form__element-text form__element-text_type-error' : 'form__element-text'}
+        type="url"
+        aria-label="Ссылка на картинку"
+        placeholder="Ссылка на картинку"
+        name="link"
+        minLength="7"
+        maxLength="300"
+        value={values.link || ''}
+        onChange={handleChange}
         required
       />
-      <span id={"popup-input-url-error"} className={"popup__error"}></span>
+      <span id='link-error' className={errors.name ? 'form__input-error_active' : 'form__input-error'}>{errors.link}</span>
     </PopupWithForm>
   );
 }
