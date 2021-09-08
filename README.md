@@ -65,4 +65,6 @@ ___
 - [Чеклист №7](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-7/index.html)
 - [Чеклист №8](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-8/index.html)
 - [Чеклист №9](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-9/index.html)
+- [Чеклист №10](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-10/index.html)
+- [Чеклист №11](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-11/index.html)
 
