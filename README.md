@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Проект "Mesto-react"
+ Создан в рамках учебы в [Яндекс.Практикум](https://practicum.yandex.ru/) на факультете "Веб-разработчик"
+ ___
+## Описание:
+"Mesto" - это приложение, в котором пользователям предоставляется возможность делиться фотогрфиями. Проект создавался по макету Figma. Приложение создано на фреймворке React. [Ссылка на проект написанный на Pure JS](https://github.com/yungpluxury/mesto).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Проект на GitHub Pages](https://yungpluxury.github.io/mesto-react/)
+___
+## Функциональность:
 
-## Available Scripts
+- Добавление и удаление своих фотографий
+- Оценка фотографий (лайк)
+- Редактирование своего профиля (имя, о себе и аватар)
+- Валидация форм
+- Данные храняться на серверах, предоставленных командой [Яндекс.Практикум](https://practicum.yandex.ru/)
+- [Адрес сервера проекта Mesto](https://mesto.nomoreparties.space.)
+___
+## Используемые технологии:
 
-In the project directory, you can run:
+- [FlexBox](https://developer.mozilla.org/ru/docs/Learn/CSS/CSS_layout/Flexbox)
+- [BEM Methodology](https://ru.bem.info/)
+- [Git](https://git-scm.com/)
+- [File Structure and File Paths (Nested BEM)](https://en.bem.info/methodology/filestructure/#nested)
+- [Animation using CSS](https://developer.mozilla.org/ru/docs/Web/CSS/animation)
+- [Transform using CSS](https://developer.mozilla.org/ru/docs/Web/CSS/transform)
+- [Positioning Elements](https://developer.mozilla.org/ru/docs/Web/CSS/position)
+- [Grid Layout](https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout)
+- [JavaScript (Asynchronous JS, OOP, DOM API, Fetch API)](https://developer.mozilla.org/ru/docs/Web/JavaScript)
+- [WebPack](https://webpack.js.org/)
+___
+## Инструкция по установке:
 
-### `npm start`
+```sh
+git clone https://github.com/yungpluxury/mesto-react.git
+```
+```sh
+cd mesto-react
+```
+```sh
+npm install
+```
+```sh
+npm start
+```
+___
+## Планы по доработке проекта:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Добавление в приложение аутентификации и регистрации (реализовано в [следующем проекте](https://github.com/yungpluxury/react-mesto-auth))
+___
+## Библиотеки:
+ReactJS
+___
+## Макет и чеклист:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+В ходе обучения, командой Яндекс.Практикум были предоставлены макеты и чеклисты
 
-### `npm test`
+- [Макет №4](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
+- [Макет №5](https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=0%3A1)
+- [Макет №6-8](https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=0%3A1)
+- [Макет №9](https://www.figma.com/file/PSdQFRHoxXJFs2FH8IXViF/JavaScript-9-sprint?node-id=0%3A1)
+- [Чеклист №4](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-4/index.html)
+- [Чеклист №5](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-5/index.html)
+- [Чеклист №6](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-6/index.html)
+- [Чеклист №7](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-7/index.html)
+- [Чеклист №8](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-8/index.html)
+- [Чеклист №9](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-9/index.html)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
