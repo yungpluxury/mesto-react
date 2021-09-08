@@ -27,6 +27,7 @@ ___
 - [Grid Layout](https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout)
 - [JavaScript (Asynchronous JS, OOP, DOM API, Fetch API)](https://developer.mozilla.org/ru/docs/Web/JavaScript)
 - [WebPack](https://webpack.js.org/)
+- [Functional Components](https://ru.reactjs.org/docs/components-and-props.html)
 ___
 ## Инструкция по установке:
 
